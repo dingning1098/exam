@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.he.demo.dao.BookDao">
+	
+	<!-- 查询所有图书 -->
+	<select id="search" resultType="cn.he.demo.entity.Book">
+		select ID,NAME,PRICE,AUTHOR from BOOK
+	</select>
+	
+	
+	<select id="get" resultType="cn.he.demo.entity.Book">
+		select ID,NAME,PRICE,AUTHOR from BOOK
+		where ID = #{id}
+	</select>
+	
+	<insert id="save">
+        insert into book(ID,NAME,PRICE,AUTHOR)
+        values(#{id},#{name},#{price},#{author})
+    </insert>
+    
+    <delete id="delete">
+        delete from book where id=#{id}
+    </delete>
+    
+    <update id="update">
+        update book set name=#{name},price=#{price},author=#{author}
+        where id=#{id}
+    </update>
+    
+</mapper>

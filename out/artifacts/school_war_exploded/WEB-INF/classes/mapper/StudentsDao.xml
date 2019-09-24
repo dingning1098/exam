@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dn.school.dao.StudentsDao">
+    <resultMap id="studentsMap" type="com.dn.school.entity.Students">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="birth" column="birth"/>
+        <result property="hobby" column="hobby"/>
+        <result property="sex" column="sex"/>
+    </resultMap>
+    <select id="search" resultMap="studentsMap">
+        select id,name,birth,hobby,sex from students
+    </select>
+</mapper>
